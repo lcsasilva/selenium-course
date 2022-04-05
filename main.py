@@ -12,9 +12,12 @@ driver.implicitly_wait(3)
 my_element = driver.find_element_by_id('instant-page-button')
 my_element.click()
 
+#name_element = driver.find_element_by_id('instant-page-title')
+#print(f'{name_element.text}...')
+
 WebDriverWait(driver, 30).until(
     EC.text_to_be_present_in_element(
-        (By.CLASS_NAME, 'instant-page-title') ,# Element Filtration
-        'Complete!'# The expected text
+        (By.CLASS_NAME, 'instant-page-title') , # Element Filtration
+        'complete!'# The expected text
     )
 )
